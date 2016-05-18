@@ -33,8 +33,12 @@ class OnoDev_DevMonitor {
 	add_action('admin_init',array(&$this,'DevMonitorOptions_init'));
 	add_action('admin_menu', array(&$this,'DevMonitorOptions_add_page'));
 	add_action('admin_bar_menu', array(&$this,'DevMonitor_admin_bar'), 999);
+	// Loads the admin bar css for the frontend pages
 	add_action('wp_head', array(&$this,'submenu_overflow_css'), 99999);
-	add_action('admin_head', array(&$this,'submenu_overflow_css'), 99999);
+	// Loads the admin bar css for the admin areas
+	add_action('admin_enqueue_scripts', array(&$this,'submenu_overflow_css'), 99999);
+	// Loads the admin page related css only on the admin page
+	add_action('admin_print_styles-settings_page_devmonitor_options_group', array(&$this,'admin_page_css'));
 	
   }
   
@@ -44,11 +48,27 @@ echo '<!-- Dev Monitor Styles -->';
 echo "\n";
 echo '<style type="text/css">';
 echo "\n";
-echo'.ono-dev-dev-monitor-table td {padding:10px !important;vertical-align: top;}.ono-dev-dev-monitor-overflow {max-height: 500px !important;width:500px !important;padding:5px !important;overflow-y: scroll !important;}.ono-dev-dev-monitor-overflow ul li {padding:5px !important;margin:0px 3px !important;list-style:initial !important;}.onodev-info, .onodev-success, .onodev-warning, .onodev-error, .onodev-validation {border: 1px solid;margin: 10px 0px;padding:15px 10px 15px 50px;background-repeat: no-repeat;background-position: 10px center;}.onodev-info {color: #00529B;background-color: #BDE5F8;}.onodev-success {color: #4F8A10;background-color: #DFF2BF;}.onodev-warning {color: #9F6000;background-color: #FEEFB3;}.onodev-error {color: #D8000C;background-color: #FFBABA;}';
+echo '.ono-dev-dev-monitor-overflow{max-height:500px;width:500px!important;padding:5px!important;overflow-y:scroll!important}.ono-dev-dev-monitor-overflow ul li{padding:3px 15px!important;margin:0 3px!important;list-style:outside!important}';
 echo "\n";
 echo '</style>';
 echo "\n";
 echo '<!-- Dev Monitor Styles -->';
+echo "\n";
+echo "\n";
+	}
+	
+	public function admin_page_css() {
+echo "\n";
+echo '<!-- Dev Monitor Styles -->';
+echo "\n";
+echo '<style type="text/css">';
+echo "\n";
+echo '.onodev-error,.onodev-info,.onodev-success,.onodev-validation,.onodev-warning{border:1px solid;margin:10px 0;padding:15px 10px 15px 50px;background-repeat:no-repeat;background-position:10px center}.onodev-info{color:#00529B;background-color:#BDE5F8}.onodev-success{color:#4F8A10;background-color:#DFF2BF}.onodev-warning{color:#9F6000;background-color:#FEEFB3}.onodev-error{color:#D8000C;background-color:#FFBABA}';
+echo "\n";
+echo '</style>';
+echo "\n";
+echo '<!-- Dev Monitor Styles -->';
+echo "\n";
 echo "\n";
 	}
 
