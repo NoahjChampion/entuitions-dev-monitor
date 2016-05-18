@@ -1,12 +1,12 @@
 <?php
 /*
-	Plugin Name:	Dev Monitor
-	Plugin URI:		onodev.com/dev-monitor
-	Description:	Monitor Scripts, Styles, Queries, and more during Development
-	Version:			1.1.0
-	Author:				Tom Williams
-	Author URI:		onodev.com
-	License:			GPLv3
+	Plugin Name: Dev Monitor
+	Plugin URI: onodev.com/dev-monitor
+	Description: Monitor Scripts, Styles, Queries, and more during Development
+	Version: 1.1.0
+	Author: Tom Williams
+	Author URI: onodev.com
+	License: GPLv3
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
