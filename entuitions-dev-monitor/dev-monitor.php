@@ -458,7 +458,7 @@ class OnoDev_DevMonitor {
   
 	public function DevMonitor_admin_bar(){
 		global $wp_admin_bar, $wpdb, $current_user;
-		get_currentuserinfo();
+		wp_get_current_user();
 		if ( !current_user_can('manage_options') || !is_admin_bar_showing() )
 			return;
     
