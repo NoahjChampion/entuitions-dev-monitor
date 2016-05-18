@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: OnoDev - Development Monitor
+Plugin Name:  Dev Monitor
 Plugin URI: onodev.com/dev-monitor
 Description: Monitor Scripts, Styles, Queries, and more during Development
 Version: 1.1.0
